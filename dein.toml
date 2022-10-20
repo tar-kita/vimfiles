@@ -1,0 +1,11 @@
+# dein.toml
+# EOL:LF / code:UTF-8
+
+[[plugins]] # ステータスライン Lightline
+repo = 'itchyny/lightline.vim'
+
+[[plugins]] # Tender Color scheme
+repo = 'jacoborus/tender.vim'
+
+[[plugins]] # 多様なファイル形式に対応する vim-polyglot
+repo = 'sheerun/vim-polyglot'

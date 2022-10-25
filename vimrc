@@ -99,30 +99,6 @@ execute 'set viminfo+=n' . s:viminfo_file
 " # Vimヘルプの言語 優先順位を設定
 set helplang=ja,en
 
-" # プラグイン設定 {
-" ## NERDTree
-" ## <C-o> open NERDTree
-nmap <silent> <C-o> :NERDTreeToggle<CR>
-
-" ## fzf
-if has('win32')
-    function g:ExecInBash(command)
-        let tmp = &shell
-        set shell=bash
-        execute a:command
-        let &shell = tmp
-    endfunction
-    nmap <silent> fzf :call ExecInBash('FZF')<CR>
-elseif has('unix')
-    nmap <silent> fzf :FZF<CR>
-endif
-
-" ## CSV
-let g:csv_start = 1
-let g:csv_end = 100
-let g:csv_no_conceal = 0
-let g:csv_delim_test = ',;|'
-
 " # } プラグイン設定
 
 " # 表示設定 {

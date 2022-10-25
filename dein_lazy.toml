@@ -6,6 +6,12 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]] # ツリー型エクスプローラー NERDTree
 repo = 'preservim/nerdtree'
+hook_add = '''
+" # プラグイン設定 {
+" ## NERDTree
+" ## <C-o> open NERDTree
+nmap <silent> <C-o> :NERDTreeToggle<CR>
+'''
 
 # 曖昧入力でファイルを開く fzf {
 [[plugins]]
@@ -15,4 +21,18 @@ build = './install --bin'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+hook_add = '''
+" ## fzf
+if has('win32')
+    function g:ExecInBash(command)
+        let tmp = &shell
+        set shell=bash
+        execute a:command
+        let &shell = tmp
+    endfunction
+    nmap <silent> fzf :call ExecInBash('FZF')<CR>
+elseif has('unix')
+    nmap <silent> fzf :FZF<CR>
+endif
+'''
 # } fzf

@@ -36,3 +36,11 @@ elseif has('unix')
 endif
 '''
 # } fzf
+
+[[plugins]] # ユーザー定義コマンドを置き換える vim-altercmd
+repo = 'kana/vim-altercmd'
+hook_add = '''
+call altercmd#load()
+AlterCommand lnote Lnote
+AlterCommand wnote Wnote
+'''

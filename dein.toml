@@ -16,3 +16,7 @@ let g:csv_end = 100
 let g:csv_no_conceal = 0
 let g:csv_delim_test = ',;|'
 '''
+
+[[plugins]] # YAMAHA製ルータのconfigをええ感じに見る為のsyntaxファイル rtx.vim
+repo = 'okkiroxx/rtx.vim'
+hook_add = 'autocmd BufRead,BufNewFile *config*.txt set filetype=rtx | set nowrap'

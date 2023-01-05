@@ -1,6 +1,6 @@
 # vimfiles
 ## 概要
-Windows+PowershellでVimを使う設定と手順。  
+Windows+PowershellでVimを使う設定と手順。
 ※vimrcはLinuxでも動作確認済み。
 
 ## 目次
@@ -13,7 +13,7 @@ Windows+PowershellでVimを使う設定と手順。
 - Vimの試起動
 
 ## Vimのインストール
-- `winget install --id vim.vim -e -s winget -i`  
+- `winget install --id vim.vim -e -s winget -i`
 9.0.0412で確認
   - インストーラー→コンポーネント選択画面で
     - 「VIMのアイコンを作成」→「デスクトップ上」のチェックを外す
@@ -23,7 +23,7 @@ Windows+PowershellでVimを使う設定と手順。
 - インストールを進め、最後の「インストール完了後にREADMEを表示する」のチェックを外す
 
 ## Gitのインストール
-- `winget install --id Git.Git -e -s winget -i`  
+- `winget install --id Git.Git -e -s winget -i`
 2.37.3で確認
   - 「Windows Exlplorer Integration」のチェックを外してNext
   - 「Don't create a Start Menu folder」のチェックを入れてNext
@@ -46,12 +46,14 @@ git config --global alias.b branch
 git config --global alias.sw switch
 git config --global alias.l "log --graph --oneline --decorate=short -20 --date=short --format='%C(yellow)%h%C(reset) %C(cyan)%ad%C(reset)%C(auto)%d%C(reset) %s %C(bold blue)@%an%C(reset)'"
 git clone https://github.com/tar-kita/vimfiles.git $env:USERPROFILE\vimfiles
+git config --global commit.template ~/vimfiles/gitconfig/.commit_template
 ```
-一旦Powershellをexit  
+一旦Powershellをexit
 
-Linuxの場合は`git clone`時のクローン先を`.vim`に変える
+Linuxの場合は`git clone`等のクローン先を`.vim`に変える
 ```
 git clone https://github.com/tar-kita/vimfiles.git ~/.vim
+git config --global commit.template ~/.vim/gitconfig/.commit_template
 ```
 ## 環境変数設定
 管理者のPower Shellで以下のコマンドを実行する
